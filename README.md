@@ -12,3 +12,11 @@ Unfortunately, this method is impractical for most users, so the modified method
 
 Your task has been made easy, as the encryption key consists of three lower case characters. Using 0059_cipher.txt, a file containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.  
 ___
+## Solution
+As every original word must contains A-Z or a-z characters, our original code must contains ascii codes between 65-90 or between 97-122.
+Our password must contains ascii codes between 97-122.
+Starting with key aaa (97, 97, 97), then aab (97, 97, 98)..., and finishing with zzz (122, 122, 122), we must Xor every 3 encrypted codes with the key.
+If the resulting Xor code is not allowed, we try the next key.  
+We print the words and sum of codes of every allowed result, and if we have more than one,  
+the solution will be the result in which every word is an english word
+I asume at the beginning that there will be a few solutions or only one solution.
